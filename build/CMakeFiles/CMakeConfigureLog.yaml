@@ -364,22 +364,28 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/share/cmake-4.1/Modules/CMakeDetermineCompiler.cmake:115 (find_program)"
-      - "C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:67 (_cmake_find_compiler_path)"
+      - "C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/share/cmake-4.1/Modules/CMakeDetermineCompiler.cmake:63 (find_program)"
+      - "C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:64 (_cmake_find_compiler)"
       - "CMakeLists.txt:2 (project)"
     mode: "program"
-    variable: "CMAKE_C_COMPILER_WITH_PATH"
-    description: "Path to a program."
+    variable: "CMAKE_C_COMPILER"
+    description: "C compiler"
     settings:
       SearchFramework: "NEVER"
       SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
       CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: false
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
+      - "cc"
       - "gcc"
+      - "cl"
+      - "bcc"
+      - "xlc"
+      - "icx"
+      - "clang"
     candidate_directories:
       - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
@@ -411,87 +417,576 @@ events:
       - "C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/"
       - "C:/tools/ffmpeg-6.x-essentials_build/bin/"
     searched_directories:
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/cc.com"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/cc.exe"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/cc"
       - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc.com"
       - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc.exe"
       - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/cl.com"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/cl.exe"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/cl"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/bcc.com"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/bcc.exe"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/bcc"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/xlc.com"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/xlc.exe"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/xlc"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/icx.com"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/icx.exe"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/icx"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/clang.com"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/clang.exe"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/clang"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/cc.com"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/cc.exe"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/cc"
       - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/gcc.com"
       - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/gcc.exe"
       - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/gcc"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/cl.com"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/cl.exe"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/cl"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/bcc.com"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/bcc.exe"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/bcc"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/xlc.com"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/xlc.exe"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/xlc"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/icx.com"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/icx.exe"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/icx"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/clang.com"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/clang.exe"
+      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/clang"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/cc.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/cc.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/cc"
       - "C:/Program Files/Common Files/Oracle/Java/javapath/gcc.com"
       - "C:/Program Files/Common Files/Oracle/Java/javapath/gcc.exe"
       - "C:/Program Files/Common Files/Oracle/Java/javapath/gcc"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/cl.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/cl.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/cl"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/bcc.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/bcc.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/bcc"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/xlc.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/xlc.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/xlc"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/icx.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/icx.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/icx"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/clang.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/clang.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/clang"
+      - "C:/Windows/System32/cc.com"
+      - "C:/Windows/System32/cc.exe"
+      - "C:/Windows/System32/cc"
       - "C:/Windows/System32/gcc.com"
       - "C:/Windows/System32/gcc.exe"
       - "C:/Windows/System32/gcc"
+      - "C:/Windows/System32/cl.com"
+      - "C:/Windows/System32/cl.exe"
+      - "C:/Windows/System32/cl"
+      - "C:/Windows/System32/bcc.com"
+      - "C:/Windows/System32/bcc.exe"
+      - "C:/Windows/System32/bcc"
+      - "C:/Windows/System32/xlc.com"
+      - "C:/Windows/System32/xlc.exe"
+      - "C:/Windows/System32/xlc"
+      - "C:/Windows/System32/icx.com"
+      - "C:/Windows/System32/icx.exe"
+      - "C:/Windows/System32/icx"
+      - "C:/Windows/System32/clang.com"
+      - "C:/Windows/System32/clang.exe"
+      - "C:/Windows/System32/clang"
+      - "C:/Windows/cc.com"
+      - "C:/Windows/cc.exe"
+      - "C:/Windows/cc"
       - "C:/Windows/gcc.com"
       - "C:/Windows/gcc.exe"
       - "C:/Windows/gcc"
+      - "C:/Windows/cl.com"
+      - "C:/Windows/cl.exe"
+      - "C:/Windows/cl"
+      - "C:/Windows/bcc.com"
+      - "C:/Windows/bcc.exe"
+      - "C:/Windows/bcc"
+      - "C:/Windows/xlc.com"
+      - "C:/Windows/xlc.exe"
+      - "C:/Windows/xlc"
+      - "C:/Windows/icx.com"
+      - "C:/Windows/icx.exe"
+      - "C:/Windows/icx"
+      - "C:/Windows/clang.com"
+      - "C:/Windows/clang.exe"
+      - "C:/Windows/clang"
+      - "C:/Windows/System32/wbem/cc.com"
+      - "C:/Windows/System32/wbem/cc.exe"
+      - "C:/Windows/System32/wbem/cc"
       - "C:/Windows/System32/wbem/gcc.com"
       - "C:/Windows/System32/wbem/gcc.exe"
       - "C:/Windows/System32/wbem/gcc"
+      - "C:/Windows/System32/wbem/cl.com"
+      - "C:/Windows/System32/wbem/cl.exe"
+      - "C:/Windows/System32/wbem/cl"
+      - "C:/Windows/System32/wbem/bcc.com"
+      - "C:/Windows/System32/wbem/bcc.exe"
+      - "C:/Windows/System32/wbem/bcc"
+      - "C:/Windows/System32/wbem/xlc.com"
+      - "C:/Windows/System32/wbem/xlc.exe"
+      - "C:/Windows/System32/wbem/xlc"
+      - "C:/Windows/System32/wbem/icx.com"
+      - "C:/Windows/System32/wbem/icx.exe"
+      - "C:/Windows/System32/wbem/icx"
+      - "C:/Windows/System32/wbem/clang.com"
+      - "C:/Windows/System32/wbem/clang.exe"
+      - "C:/Windows/System32/wbem/clang"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/cc.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/cc.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/cc"
       - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc.com"
       - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc.exe"
       - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/cl.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/cl.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/cl"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/bcc.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/bcc.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/bcc"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/xlc.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/xlc.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/xlc"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/icx.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/icx.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/icx"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/clang.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/clang.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/clang"
+      - "C:/Windows/System32/OpenSSH/cc.com"
+      - "C:/Windows/System32/OpenSSH/cc.exe"
+      - "C:/Windows/System32/OpenSSH/cc"
       - "C:/Windows/System32/OpenSSH/gcc.com"
       - "C:/Windows/System32/OpenSSH/gcc.exe"
       - "C:/Windows/System32/OpenSSH/gcc"
+      - "C:/Windows/System32/OpenSSH/cl.com"
+      - "C:/Windows/System32/OpenSSH/cl.exe"
+      - "C:/Windows/System32/OpenSSH/cl"
+      - "C:/Windows/System32/OpenSSH/bcc.com"
+      - "C:/Windows/System32/OpenSSH/bcc.exe"
+      - "C:/Windows/System32/OpenSSH/bcc"
+      - "C:/Windows/System32/OpenSSH/xlc.com"
+      - "C:/Windows/System32/OpenSSH/xlc.exe"
+      - "C:/Windows/System32/OpenSSH/xlc"
+      - "C:/Windows/System32/OpenSSH/icx.com"
+      - "C:/Windows/System32/OpenSSH/icx.exe"
+      - "C:/Windows/System32/OpenSSH/icx"
+      - "C:/Windows/System32/OpenSSH/clang.com"
+      - "C:/Windows/System32/OpenSSH/clang.exe"
+      - "C:/Windows/System32/OpenSSH/clang"
+      - "C:/Program Files/Git/cmd/cc.com"
+      - "C:/Program Files/Git/cmd/cc.exe"
+      - "C:/Program Files/Git/cmd/cc"
       - "C:/Program Files/Git/cmd/gcc.com"
       - "C:/Program Files/Git/cmd/gcc.exe"
       - "C:/Program Files/Git/cmd/gcc"
+      - "C:/Program Files/Git/cmd/cl.com"
+      - "C:/Program Files/Git/cmd/cl.exe"
+      - "C:/Program Files/Git/cmd/cl"
+      - "C:/Program Files/Git/cmd/bcc.com"
+      - "C:/Program Files/Git/cmd/bcc.exe"
+      - "C:/Program Files/Git/cmd/bcc"
+      - "C:/Program Files/Git/cmd/xlc.com"
+      - "C:/Program Files/Git/cmd/xlc.exe"
+      - "C:/Program Files/Git/cmd/xlc"
+      - "C:/Program Files/Git/cmd/icx.com"
+      - "C:/Program Files/Git/cmd/icx.exe"
+      - "C:/Program Files/Git/cmd/icx"
+      - "C:/Program Files/Git/cmd/clang.com"
+      - "C:/Program Files/Git/cmd/clang.exe"
+      - "C:/Program Files/Git/cmd/clang"
+      - "C:/Program Files/nodejs/cc.com"
+      - "C:/Program Files/nodejs/cc.exe"
+      - "C:/Program Files/nodejs/cc"
       - "C:/Program Files/nodejs/gcc.com"
       - "C:/Program Files/nodejs/gcc.exe"
       - "C:/Program Files/nodejs/gcc"
+      - "C:/Program Files/nodejs/cl.com"
+      - "C:/Program Files/nodejs/cl.exe"
+      - "C:/Program Files/nodejs/cl"
+      - "C:/Program Files/nodejs/bcc.com"
+      - "C:/Program Files/nodejs/bcc.exe"
+      - "C:/Program Files/nodejs/bcc"
+      - "C:/Program Files/nodejs/xlc.com"
+      - "C:/Program Files/nodejs/xlc.exe"
+      - "C:/Program Files/nodejs/xlc"
+      - "C:/Program Files/nodejs/icx.com"
+      - "C:/Program Files/nodejs/icx.exe"
+      - "C:/Program Files/nodejs/icx"
+      - "C:/Program Files/nodejs/clang.com"
+      - "C:/Program Files/nodejs/clang.exe"
+      - "C:/Program Files/nodejs/clang"
+      - "C:/Program Files/Docker/Docker/resources/bin/cc.com"
+      - "C:/Program Files/Docker/Docker/resources/bin/cc.exe"
+      - "C:/Program Files/Docker/Docker/resources/bin/cc"
       - "C:/Program Files/Docker/Docker/resources/bin/gcc.com"
       - "C:/Program Files/Docker/Docker/resources/bin/gcc.exe"
       - "C:/Program Files/Docker/Docker/resources/bin/gcc"
+      - "C:/Program Files/Docker/Docker/resources/bin/cl.com"
+      - "C:/Program Files/Docker/Docker/resources/bin/cl.exe"
+      - "C:/Program Files/Docker/Docker/resources/bin/cl"
+      - "C:/Program Files/Docker/Docker/resources/bin/bcc.com"
+      - "C:/Program Files/Docker/Docker/resources/bin/bcc.exe"
+      - "C:/Program Files/Docker/Docker/resources/bin/bcc"
+      - "C:/Program Files/Docker/Docker/resources/bin/xlc.com"
+      - "C:/Program Files/Docker/Docker/resources/bin/xlc.exe"
+      - "C:/Program Files/Docker/Docker/resources/bin/xlc"
+      - "C:/Program Files/Docker/Docker/resources/bin/icx.com"
+      - "C:/Program Files/Docker/Docker/resources/bin/icx.exe"
+      - "C:/Program Files/Docker/Docker/resources/bin/icx"
+      - "C:/Program Files/Docker/Docker/resources/bin/clang.com"
+      - "C:/Program Files/Docker/Docker/resources/bin/clang.exe"
+      - "C:/Program Files/Docker/Docker/resources/bin/clang"
+      - "C:/Program Files/Go/bin/cc.com"
+      - "C:/Program Files/Go/bin/cc.exe"
+      - "C:/Program Files/Go/bin/cc"
       - "C:/Program Files/Go/bin/gcc.com"
       - "C:/Program Files/Go/bin/gcc.exe"
       - "C:/Program Files/Go/bin/gcc"
+      - "C:/Program Files/Go/bin/cl.com"
+      - "C:/Program Files/Go/bin/cl.exe"
+      - "C:/Program Files/Go/bin/cl"
+      - "C:/Program Files/Go/bin/bcc.com"
+      - "C:/Program Files/Go/bin/bcc.exe"
+      - "C:/Program Files/Go/bin/bcc"
+      - "C:/Program Files/Go/bin/xlc.com"
+      - "C:/Program Files/Go/bin/xlc.exe"
+      - "C:/Program Files/Go/bin/xlc"
+      - "C:/Program Files/Go/bin/icx.com"
+      - "C:/Program Files/Go/bin/icx.exe"
+      - "C:/Program Files/Go/bin/icx"
+      - "C:/Program Files/Go/bin/clang.com"
+      - "C:/Program Files/Go/bin/clang.exe"
+      - "C:/Program Files/Go/bin/clang"
+      - "C:/Program Files/Amazon/AWSCLIV2/cc.com"
+      - "C:/Program Files/Amazon/AWSCLIV2/cc.exe"
+      - "C:/Program Files/Amazon/AWSCLIV2/cc"
       - "C:/Program Files/Amazon/AWSCLIV2/gcc.com"
       - "C:/Program Files/Amazon/AWSCLIV2/gcc.exe"
       - "C:/Program Files/Amazon/AWSCLIV2/gcc"
+      - "C:/Program Files/Amazon/AWSCLIV2/cl.com"
+      - "C:/Program Files/Amazon/AWSCLIV2/cl.exe"
+      - "C:/Program Files/Amazon/AWSCLIV2/cl"
+      - "C:/Program Files/Amazon/AWSCLIV2/bcc.com"
+      - "C:/Program Files/Amazon/AWSCLIV2/bcc.exe"
+      - "C:/Program Files/Amazon/AWSCLIV2/bcc"
+      - "C:/Program Files/Amazon/AWSCLIV2/xlc.com"
+      - "C:/Program Files/Amazon/AWSCLIV2/xlc.exe"
+      - "C:/Program Files/Amazon/AWSCLIV2/xlc"
+      - "C:/Program Files/Amazon/AWSCLIV2/icx.com"
+      - "C:/Program Files/Amazon/AWSCLIV2/icx.exe"
+      - "C:/Program Files/Amazon/AWSCLIV2/icx"
+      - "C:/Program Files/Amazon/AWSCLIV2/clang.com"
+      - "C:/Program Files/Amazon/AWSCLIV2/clang.exe"
+      - "C:/Program Files/Amazon/AWSCLIV2/clang"
+      - "C:/Users/ayman/scoop/apps/openssl/current/bin/cc.com"
+      - "C:/Users/ayman/scoop/apps/openssl/current/bin/cc.exe"
+      - "C:/Users/ayman/scoop/apps/openssl/current/bin/cc"
       - "C:/Users/ayman/scoop/apps/openssl/current/bin/gcc.com"
       - "C:/Users/ayman/scoop/apps/openssl/current/bin/gcc.exe"
       - "C:/Users/ayman/scoop/apps/openssl/current/bin/gcc"
+      - "C:/Users/ayman/scoop/apps/openssl/current/bin/cl.com"
+      - "C:/Users/ayman/scoop/apps/openssl/current/bin/cl.exe"
+      - "C:/Users/ayman/scoop/apps/openssl/current/bin/cl"
+      - "C:/Users/ayman/scoop/apps/openssl/current/bin/bcc.com"
+      - "C:/Users/ayman/scoop/apps/openssl/current/bin/bcc.exe"
+      - "C:/Users/ayman/scoop/apps/openssl/current/bin/bcc"
+      - "C:/Users/ayman/scoop/apps/openssl/current/bin/xlc.com"
+      - "C:/Users/ayman/scoop/apps/openssl/current/bin/xlc.exe"
+      - "C:/Users/ayman/scoop/apps/openssl/current/bin/xlc"
+      - "C:/Users/ayman/scoop/apps/openssl/current/bin/icx.com"
+      - "C:/Users/ayman/scoop/apps/openssl/current/bin/icx.exe"
+      - "C:/Users/ayman/scoop/apps/openssl/current/bin/icx"
+      - "C:/Users/ayman/scoop/apps/openssl/current/bin/clang.com"
+      - "C:/Users/ayman/scoop/apps/openssl/current/bin/clang.exe"
+      - "C:/Users/ayman/scoop/apps/openssl/current/bin/clang"
+      - "C:/Users/ayman/scoop/apps/maven/current/bin/cc.com"
+      - "C:/Users/ayman/scoop/apps/maven/current/bin/cc.exe"
+      - "C:/Users/ayman/scoop/apps/maven/current/bin/cc"
       - "C:/Users/ayman/scoop/apps/maven/current/bin/gcc.com"
       - "C:/Users/ayman/scoop/apps/maven/current/bin/gcc.exe"
       - "C:/Users/ayman/scoop/apps/maven/current/bin/gcc"
+      - "C:/Users/ayman/scoop/apps/maven/current/bin/cl.com"
+      - "C:/Users/ayman/scoop/apps/maven/current/bin/cl.exe"
+      - "C:/Users/ayman/scoop/apps/maven/current/bin/cl"
+      - "C:/Users/ayman/scoop/apps/maven/current/bin/bcc.com"
+      - "C:/Users/ayman/scoop/apps/maven/current/bin/bcc.exe"
+      - "C:/Users/ayman/scoop/apps/maven/current/bin/bcc"
+      - "C:/Users/ayman/scoop/apps/maven/current/bin/xlc.com"
+      - "C:/Users/ayman/scoop/apps/maven/current/bin/xlc.exe"
+      - "C:/Users/ayman/scoop/apps/maven/current/bin/xlc"
+      - "C:/Users/ayman/scoop/apps/maven/current/bin/icx.com"
+      - "C:/Users/ayman/scoop/apps/maven/current/bin/icx.exe"
+      - "C:/Users/ayman/scoop/apps/maven/current/bin/icx"
+      - "C:/Users/ayman/scoop/apps/maven/current/bin/clang.com"
+      - "C:/Users/ayman/scoop/apps/maven/current/bin/clang.exe"
+      - "C:/Users/ayman/scoop/apps/maven/current/bin/clang"
+      - "C:/Users/ayman/scoop/shims/cc.com"
+      - "C:/Users/ayman/scoop/shims/cc.exe"
+      - "C:/Users/ayman/scoop/shims/cc"
       - "C:/Users/ayman/scoop/shims/gcc.com"
       - "C:/Users/ayman/scoop/shims/gcc.exe"
       - "C:/Users/ayman/scoop/shims/gcc"
+      - "C:/Users/ayman/scoop/shims/cl.com"
+      - "C:/Users/ayman/scoop/shims/cl.exe"
+      - "C:/Users/ayman/scoop/shims/cl"
+      - "C:/Users/ayman/scoop/shims/bcc.com"
+      - "C:/Users/ayman/scoop/shims/bcc.exe"
+      - "C:/Users/ayman/scoop/shims/bcc"
+      - "C:/Users/ayman/scoop/shims/xlc.com"
+      - "C:/Users/ayman/scoop/shims/xlc.exe"
+      - "C:/Users/ayman/scoop/shims/xlc"
+      - "C:/Users/ayman/scoop/shims/icx.com"
+      - "C:/Users/ayman/scoop/shims/icx.exe"
+      - "C:/Users/ayman/scoop/shims/icx"
+      - "C:/Users/ayman/scoop/shims/clang.com"
+      - "C:/Users/ayman/scoop/shims/clang.exe"
+      - "C:/Users/ayman/scoop/shims/clang"
+      - "C:/Users/ayman/AppData/Local/Microsoft/WindowsApps/cc.com"
+      - "C:/Users/ayman/AppData/Local/Microsoft/WindowsApps/cc.exe"
+      - "C:/Users/ayman/AppData/Local/Microsoft/WindowsApps/cc"
       - "C:/Users/ayman/AppData/Local/Microsoft/WindowsApps/gcc.com"
       - "C:/Users/ayman/AppData/Local/Microsoft/WindowsApps/gcc.exe"
       - "C:/Users/ayman/AppData/Local/Microsoft/WindowsApps/gcc"
+      - "C:/Users/ayman/AppData/Local/Microsoft/WindowsApps/cl.com"
+      - "C:/Users/ayman/AppData/Local/Microsoft/WindowsApps/cl.exe"
+      - "C:/Users/ayman/AppData/Local/Microsoft/WindowsApps/cl"
+      - "C:/Users/ayman/AppData/Local/Microsoft/WindowsApps/bcc.com"
+      - "C:/Users/ayman/AppData/Local/Microsoft/WindowsApps/bcc.exe"
+      - "C:/Users/ayman/AppData/Local/Microsoft/WindowsApps/bcc"
+      - "C:/Users/ayman/AppData/Local/Microsoft/WindowsApps/xlc.com"
+      - "C:/Users/ayman/AppData/Local/Microsoft/WindowsApps/xlc.exe"
+      - "C:/Users/ayman/AppData/Local/Microsoft/WindowsApps/xlc"
+      - "C:/Users/ayman/AppData/Local/Microsoft/WindowsApps/icx.com"
+      - "C:/Users/ayman/AppData/Local/Microsoft/WindowsApps/icx.exe"
+      - "C:/Users/ayman/AppData/Local/Microsoft/WindowsApps/icx"
+      - "C:/Users/ayman/AppData/Local/Microsoft/WindowsApps/clang.com"
+      - "C:/Users/ayman/AppData/Local/Microsoft/WindowsApps/clang.exe"
+      - "C:/Users/ayman/AppData/Local/Microsoft/WindowsApps/clang"
+      - "C:/Users/ayman/AppData/Local/Programs/Microsoft VS Code/bin/cc.com"
+      - "C:/Users/ayman/AppData/Local/Programs/Microsoft VS Code/bin/cc.exe"
+      - "C:/Users/ayman/AppData/Local/Programs/Microsoft VS Code/bin/cc"
       - "C:/Users/ayman/AppData/Local/Programs/Microsoft VS Code/bin/gcc.com"
       - "C:/Users/ayman/AppData/Local/Programs/Microsoft VS Code/bin/gcc.exe"
       - "C:/Users/ayman/AppData/Local/Programs/Microsoft VS Code/bin/gcc"
+      - "C:/Users/ayman/AppData/Local/Programs/Microsoft VS Code/bin/cl.com"
+      - "C:/Users/ayman/AppData/Local/Programs/Microsoft VS Code/bin/cl.exe"
+      - "C:/Users/ayman/AppData/Local/Programs/Microsoft VS Code/bin/cl"
+      - "C:/Users/ayman/AppData/Local/Programs/Microsoft VS Code/bin/bcc.com"
+      - "C:/Users/ayman/AppData/Local/Programs/Microsoft VS Code/bin/bcc.exe"
+      - "C:/Users/ayman/AppData/Local/Programs/Microsoft VS Code/bin/bcc"
+      - "C:/Users/ayman/AppData/Local/Programs/Microsoft VS Code/bin/xlc.com"
+      - "C:/Users/ayman/AppData/Local/Programs/Microsoft VS Code/bin/xlc.exe"
+      - "C:/Users/ayman/AppData/Local/Programs/Microsoft VS Code/bin/xlc"
+      - "C:/Users/ayman/AppData/Local/Programs/Microsoft VS Code/bin/icx.com"
+      - "C:/Users/ayman/AppData/Local/Programs/Microsoft VS Code/bin/icx.exe"
+      - "C:/Users/ayman/AppData/Local/Programs/Microsoft VS Code/bin/icx"
+      - "C:/Users/ayman/AppData/Local/Programs/Microsoft VS Code/bin/clang.com"
+      - "C:/Users/ayman/AppData/Local/Programs/Microsoft VS Code/bin/clang.exe"
+      - "C:/Users/ayman/AppData/Local/Programs/Microsoft VS Code/bin/clang"
+      - "C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2023.3.3/bin/cc.com"
+      - "C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2023.3.3/bin/cc.exe"
+      - "C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2023.3.3/bin/cc"
       - "C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2023.3.3/bin/gcc.com"
       - "C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2023.3.3/bin/gcc.exe"
       - "C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2023.3.3/bin/gcc"
+      - "C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2023.3.3/bin/cl.com"
+      - "C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2023.3.3/bin/cl.exe"
+      - "C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2023.3.3/bin/cl"
+      - "C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2023.3.3/bin/bcc.com"
+      - "C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2023.3.3/bin/bcc.exe"
+      - "C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2023.3.3/bin/bcc"
+      - "C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2023.3.3/bin/xlc.com"
+      - "C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2023.3.3/bin/xlc.exe"
+      - "C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2023.3.3/bin/xlc"
+      - "C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2023.3.3/bin/icx.com"
+      - "C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2023.3.3/bin/icx.exe"
+      - "C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2023.3.3/bin/icx"
+      - "C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2023.3.3/bin/clang.com"
+      - "C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2023.3.3/bin/clang.exe"
+      - "C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2023.3.3/bin/clang"
+      - "C:/xampp/php/cc.com"
+      - "C:/xampp/php/cc.exe"
+      - "C:/xampp/php/cc"
       - "C:/xampp/php/gcc.com"
       - "C:/xampp/php/gcc.exe"
       - "C:/xampp/php/gcc"
+      - "C:/xampp/php/cl.com"
+      - "C:/xampp/php/cl.exe"
+      - "C:/xampp/php/cl"
+      - "C:/xampp/php/bcc.com"
+      - "C:/xampp/php/bcc.exe"
+      - "C:/xampp/php/bcc"
+      - "C:/xampp/php/xlc.com"
+      - "C:/xampp/php/xlc.exe"
+      - "C:/xampp/php/xlc"
+      - "C:/xampp/php/icx.com"
+      - "C:/xampp/php/icx.exe"
+      - "C:/xampp/php/icx"
+      - "C:/xampp/php/clang.com"
+      - "C:/xampp/php/clang.exe"
+      - "C:/xampp/php/clang"
+      - "C:/Users/ayman/AppData/Local/ComposerSetup/bin/cc.com"
+      - "C:/Users/ayman/AppData/Local/ComposerSetup/bin/cc.exe"
+      - "C:/Users/ayman/AppData/Local/ComposerSetup/bin/cc"
       - "C:/Users/ayman/AppData/Local/ComposerSetup/bin/gcc.com"
       - "C:/Users/ayman/AppData/Local/ComposerSetup/bin/gcc.exe"
       - "C:/Users/ayman/AppData/Local/ComposerSetup/bin/gcc"
+      - "C:/Users/ayman/AppData/Local/ComposerSetup/bin/cl.com"
+      - "C:/Users/ayman/AppData/Local/ComposerSetup/bin/cl.exe"
+      - "C:/Users/ayman/AppData/Local/ComposerSetup/bin/cl"
+      - "C:/Users/ayman/AppData/Local/ComposerSetup/bin/bcc.com"
+      - "C:/Users/ayman/AppData/Local/ComposerSetup/bin/bcc.exe"
+      - "C:/Users/ayman/AppData/Local/ComposerSetup/bin/bcc"
+      - "C:/Users/ayman/AppData/Local/ComposerSetup/bin/xlc.com"
+      - "C:/Users/ayman/AppData/Local/ComposerSetup/bin/xlc.exe"
+      - "C:/Users/ayman/AppData/Local/ComposerSetup/bin/xlc"
+      - "C:/Users/ayman/AppData/Local/ComposerSetup/bin/icx.com"
+      - "C:/Users/ayman/AppData/Local/ComposerSetup/bin/icx.exe"
+      - "C:/Users/ayman/AppData/Local/ComposerSetup/bin/icx"
+      - "C:/Users/ayman/AppData/Local/ComposerSetup/bin/clang.com"
+      - "C:/Users/ayman/AppData/Local/ComposerSetup/bin/clang.exe"
+      - "C:/Users/ayman/AppData/Local/ComposerSetup/bin/clang"
+      - "C:/Users/ayman/AppData/Roaming/Composer/vendor/bin/cc.com"
+      - "C:/Users/ayman/AppData/Roaming/Composer/vendor/bin/cc.exe"
+      - "C:/Users/ayman/AppData/Roaming/Composer/vendor/bin/cc"
       - "C:/Users/ayman/AppData/Roaming/Composer/vendor/bin/gcc.com"
       - "C:/Users/ayman/AppData/Roaming/Composer/vendor/bin/gcc.exe"
       - "C:/Users/ayman/AppData/Roaming/Composer/vendor/bin/gcc"
+      - "C:/Users/ayman/AppData/Roaming/Composer/vendor/bin/cl.com"
+      - "C:/Users/ayman/AppData/Roaming/Composer/vendor/bin/cl.exe"
+      - "C:/Users/ayman/AppData/Roaming/Composer/vendor/bin/cl"
+      - "C:/Users/ayman/AppData/Roaming/Composer/vendor/bin/bcc.com"
+      - "C:/Users/ayman/AppData/Roaming/Composer/vendor/bin/bcc.exe"
+      - "C:/Users/ayman/AppData/Roaming/Composer/vendor/bin/bcc"
+      - "C:/Users/ayman/AppData/Roaming/Composer/vendor/bin/xlc.com"
+      - "C:/Users/ayman/AppData/Roaming/Composer/vendor/bin/xlc.exe"
+      - "C:/Users/ayman/AppData/Roaming/Composer/vendor/bin/xlc"
+      - "C:/Users/ayman/AppData/Roaming/Composer/vendor/bin/icx.com"
+      - "C:/Users/ayman/AppData/Roaming/Composer/vendor/bin/icx.exe"
+      - "C:/Users/ayman/AppData/Roaming/Composer/vendor/bin/icx"
+      - "C:/Users/ayman/AppData/Roaming/Composer/vendor/bin/clang.com"
+      - "C:/Users/ayman/AppData/Roaming/Composer/vendor/bin/clang.exe"
+      - "C:/Users/ayman/AppData/Roaming/Composer/vendor/bin/clang"
+      - "C:/Users/ayman/AppData/Roaming/npm/cc.com"
+      - "C:/Users/ayman/AppData/Roaming/npm/cc.exe"
+      - "C:/Users/ayman/AppData/Roaming/npm/cc"
       - "C:/Users/ayman/AppData/Roaming/npm/gcc.com"
       - "C:/Users/ayman/AppData/Roaming/npm/gcc.exe"
       - "C:/Users/ayman/AppData/Roaming/npm/gcc"
+      - "C:/Users/ayman/AppData/Roaming/npm/cl.com"
+      - "C:/Users/ayman/AppData/Roaming/npm/cl.exe"
+      - "C:/Users/ayman/AppData/Roaming/npm/cl"
+      - "C:/Users/ayman/AppData/Roaming/npm/bcc.com"
+      - "C:/Users/ayman/AppData/Roaming/npm/bcc.exe"
+      - "C:/Users/ayman/AppData/Roaming/npm/bcc"
+      - "C:/Users/ayman/AppData/Roaming/npm/xlc.com"
+      - "C:/Users/ayman/AppData/Roaming/npm/xlc.exe"
+      - "C:/Users/ayman/AppData/Roaming/npm/xlc"
+      - "C:/Users/ayman/AppData/Roaming/npm/icx.com"
+      - "C:/Users/ayman/AppData/Roaming/npm/icx.exe"
+      - "C:/Users/ayman/AppData/Roaming/npm/icx"
+      - "C:/Users/ayman/AppData/Roaming/npm/clang.com"
+      - "C:/Users/ayman/AppData/Roaming/npm/clang.exe"
+      - "C:/Users/ayman/AppData/Roaming/npm/clang"
+      - "C:/Users/ayman/AppData/Local/GitHubDesktop/bin/cc.com"
+      - "C:/Users/ayman/AppData/Local/GitHubDesktop/bin/cc.exe"
+      - "C:/Users/ayman/AppData/Local/GitHubDesktop/bin/cc"
       - "C:/Users/ayman/AppData/Local/GitHubDesktop/bin/gcc.com"
       - "C:/Users/ayman/AppData/Local/GitHubDesktop/bin/gcc.exe"
       - "C:/Users/ayman/AppData/Local/GitHubDesktop/bin/gcc"
+      - "C:/Users/ayman/AppData/Local/GitHubDesktop/bin/cl.com"
+      - "C:/Users/ayman/AppData/Local/GitHubDesktop/bin/cl.exe"
+      - "C:/Users/ayman/AppData/Local/GitHubDesktop/bin/cl"
+      - "C:/Users/ayman/AppData/Local/GitHubDesktop/bin/bcc.com"
+      - "C:/Users/ayman/AppData/Local/GitHubDesktop/bin/bcc.exe"
+      - "C:/Users/ayman/AppData/Local/GitHubDesktop/bin/bcc"
+      - "C:/Users/ayman/AppData/Local/GitHubDesktop/bin/xlc.com"
+      - "C:/Users/ayman/AppData/Local/GitHubDesktop/bin/xlc.exe"
+      - "C:/Users/ayman/AppData/Local/GitHubDesktop/bin/xlc"
+      - "C:/Users/ayman/AppData/Local/GitHubDesktop/bin/icx.com"
+      - "C:/Users/ayman/AppData/Local/GitHubDesktop/bin/icx.exe"
+      - "C:/Users/ayman/AppData/Local/GitHubDesktop/bin/icx"
+      - "C:/Users/ayman/AppData/Local/GitHubDesktop/bin/clang.com"
+      - "C:/Users/ayman/AppData/Local/GitHubDesktop/bin/clang.exe"
+      - "C:/Users/ayman/AppData/Local/GitHubDesktop/bin/clang"
+      - "C:/Users/ayman/go/bin/cc.com"
+      - "C:/Users/ayman/go/bin/cc.exe"
+      - "C:/Users/ayman/go/bin/cc"
       - "C:/Users/ayman/go/bin/gcc.com"
       - "C:/Users/ayman/go/bin/gcc.exe"
       - "C:/Users/ayman/go/bin/gcc"
+      - "C:/Users/ayman/go/bin/cl.com"
+      - "C:/Users/ayman/go/bin/cl.exe"
+      - "C:/Users/ayman/go/bin/cl"
+      - "C:/Users/ayman/go/bin/bcc.com"
+      - "C:/Users/ayman/go/bin/bcc.exe"
+      - "C:/Users/ayman/go/bin/bcc"
+      - "C:/Users/ayman/go/bin/xlc.com"
+      - "C:/Users/ayman/go/bin/xlc.exe"
+      - "C:/Users/ayman/go/bin/xlc"
+      - "C:/Users/ayman/go/bin/icx.com"
+      - "C:/Users/ayman/go/bin/icx.exe"
+      - "C:/Users/ayman/go/bin/icx"
+      - "C:/Users/ayman/go/bin/clang.com"
+      - "C:/Users/ayman/go/bin/clang.exe"
+      - "C:/Users/ayman/go/bin/clang"
+      - "C:/Program Files/mosquitto/cc.com"
+      - "C:/Program Files/mosquitto/cc.exe"
+      - "C:/Program Files/mosquitto/cc"
       - "C:/Program Files/mosquitto/gcc.com"
       - "C:/Program Files/mosquitto/gcc.exe"
       - "C:/Program Files/mosquitto/gcc"
+      - "C:/Program Files/mosquitto/cl.com"
+      - "C:/Program Files/mosquitto/cl.exe"
+      - "C:/Program Files/mosquitto/cl"
+      - "C:/Program Files/mosquitto/bcc.com"
+      - "C:/Program Files/mosquitto/bcc.exe"
+      - "C:/Program Files/mosquitto/bcc"
+      - "C:/Program Files/mosquitto/xlc.com"
+      - "C:/Program Files/mosquitto/xlc.exe"
+      - "C:/Program Files/mosquitto/xlc"
+      - "C:/Program Files/mosquitto/icx.com"
+      - "C:/Program Files/mosquitto/icx.exe"
+      - "C:/Program Files/mosquitto/icx"
+      - "C:/Program Files/mosquitto/clang.com"
+      - "C:/Program Files/mosquitto/clang.exe"
+      - "C:/Program Files/mosquitto/clang"
+      - "C:/mingw64/bin/cc.com"
+      - "C:/mingw64/bin/cc.exe"
+      - "C:/mingw64/bin/cc"
       - "C:/mingw64/bin/gcc.com"
       - "C:/mingw64/bin/gcc.exe"
       - "C:/mingw64/bin/gcc"
+      - "C:/mingw64/bin/cl.com"
+      - "C:/mingw64/bin/cl.exe"
+      - "C:/mingw64/bin/cl"
+      - "C:/mingw64/bin/bcc.com"
+      - "C:/mingw64/bin/bcc.exe"
+      - "C:/mingw64/bin/bcc"
+      - "C:/mingw64/bin/xlc.com"
+      - "C:/mingw64/bin/xlc.exe"
+      - "C:/mingw64/bin/xlc"
+      - "C:/mingw64/bin/icx.com"
+      - "C:/mingw64/bin/icx.exe"
+      - "C:/mingw64/bin/icx"
+      - "C:/mingw64/bin/clang.com"
+      - "C:/mingw64/bin/clang.exe"
+      - "C:/mingw64/bin/clang"
+      - "C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/cc.com"
+      - "C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/cc.exe"
+      - "C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/cc"
       - "C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/gcc.com"
     found: "C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/gcc.exe"
     search_context:
@@ -2644,12 +3139,12 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/share/cmake-4.1/Modules/CMakeDetermineCompiler.cmake:115 (find_program)"
-      - "C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:71 (_cmake_find_compiler_path)"
+      - "C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/share/cmake-4.1/Modules/CMakeDetermineCompiler.cmake:54 (find_program)"
+      - "C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:69 (_cmake_find_compiler)"
       - "CMakeLists.txt:2 (project)"
     mode: "program"
-    variable: "CMAKE_CXX_COMPILER_WITH_PATH"
-    description: "Path to a program."
+    variable: "CMAKE_CXX_COMPILER"
+    description: "CXX compiler"
     settings:
       SearchFramework: "NEVER"
       SearchAppBundle: "NEVER"
@@ -2659,121 +3154,17 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
+      - "c++"
       - "g++"
+      - "cl"
+      - "bcc"
+      - "icx"
+      - "clang++"
     candidate_directories:
-      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
-      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
-      - "C:/Windows/System32/"
-      - "C:/Windows/"
-      - "C:/Windows/System32/wbem/"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
-      - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/nodejs/"
-      - "C:/Program Files/Docker/Docker/resources/bin/"
-      - "C:/Program Files/Go/bin/"
-      - "C:/Program Files/Amazon/AWSCLIV2/"
-      - "C:/Users/ayman/scoop/apps/openssl/current/bin/"
-      - "C:/Users/ayman/scoop/apps/maven/current/bin/"
-      - "C:/Users/ayman/scoop/shims/"
-      - "C:/Users/ayman/AppData/Local/Microsoft/WindowsApps/"
-      - "C:/Users/ayman/AppData/Local/Programs/Microsoft VS Code/bin/"
-      - "C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2023.3.3/bin/"
-      - "C:/xampp/php/"
-      - "C:/Users/ayman/AppData/Local/ComposerSetup/bin/"
-      - "C:/Users/ayman/AppData/Roaming/Composer/vendor/bin/"
-      - "C:/Users/ayman/AppData/Roaming/npm/"
-      - "C:/Users/ayman/AppData/Local/GitHubDesktop/bin/"
-      - "C:/Users/ayman/go/bin/"
-      - "C:/Program Files/mosquitto/"
-      - "C:/mingw64/bin/"
       - "C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/"
-      - "C:/tools/ffmpeg-6.x-essentials_build/bin/"
     searched_directories:
-      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/g++.com"
-      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/g++.exe"
-      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/g++"
-      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/g++.com"
-      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/g++.exe"
-      - "C:/Users/ayman/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/g++"
-      - "C:/Program Files/Common Files/Oracle/Java/javapath/g++.com"
-      - "C:/Program Files/Common Files/Oracle/Java/javapath/g++.exe"
-      - "C:/Program Files/Common Files/Oracle/Java/javapath/g++"
-      - "C:/Windows/System32/g++.com"
-      - "C:/Windows/System32/g++.exe"
-      - "C:/Windows/System32/g++"
-      - "C:/Windows/g++.com"
-      - "C:/Windows/g++.exe"
-      - "C:/Windows/g++"
-      - "C:/Windows/System32/wbem/g++.com"
-      - "C:/Windows/System32/wbem/g++.exe"
-      - "C:/Windows/System32/wbem/g++"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/g++.com"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/g++.exe"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/g++"
-      - "C:/Windows/System32/OpenSSH/g++.com"
-      - "C:/Windows/System32/OpenSSH/g++.exe"
-      - "C:/Windows/System32/OpenSSH/g++"
-      - "C:/Program Files/Git/cmd/g++.com"
-      - "C:/Program Files/Git/cmd/g++.exe"
-      - "C:/Program Files/Git/cmd/g++"
-      - "C:/Program Files/nodejs/g++.com"
-      - "C:/Program Files/nodejs/g++.exe"
-      - "C:/Program Files/nodejs/g++"
-      - "C:/Program Files/Docker/Docker/resources/bin/g++.com"
-      - "C:/Program Files/Docker/Docker/resources/bin/g++.exe"
-      - "C:/Program Files/Docker/Docker/resources/bin/g++"
-      - "C:/Program Files/Go/bin/g++.com"
-      - "C:/Program Files/Go/bin/g++.exe"
-      - "C:/Program Files/Go/bin/g++"
-      - "C:/Program Files/Amazon/AWSCLIV2/g++.com"
-      - "C:/Program Files/Amazon/AWSCLIV2/g++.exe"
-      - "C:/Program Files/Amazon/AWSCLIV2/g++"
-      - "C:/Users/ayman/scoop/apps/openssl/current/bin/g++.com"
-      - "C:/Users/ayman/scoop/apps/openssl/current/bin/g++.exe"
-      - "C:/Users/ayman/scoop/apps/openssl/current/bin/g++"
-      - "C:/Users/ayman/scoop/apps/maven/current/bin/g++.com"
-      - "C:/Users/ayman/scoop/apps/maven/current/bin/g++.exe"
-      - "C:/Users/ayman/scoop/apps/maven/current/bin/g++"
-      - "C:/Users/ayman/scoop/shims/g++.com"
-      - "C:/Users/ayman/scoop/shims/g++.exe"
-      - "C:/Users/ayman/scoop/shims/g++"
-      - "C:/Users/ayman/AppData/Local/Microsoft/WindowsApps/g++.com"
-      - "C:/Users/ayman/AppData/Local/Microsoft/WindowsApps/g++.exe"
-      - "C:/Users/ayman/AppData/Local/Microsoft/WindowsApps/g++"
-      - "C:/Users/ayman/AppData/Local/Programs/Microsoft VS Code/bin/g++.com"
-      - "C:/Users/ayman/AppData/Local/Programs/Microsoft VS Code/bin/g++.exe"
-      - "C:/Users/ayman/AppData/Local/Programs/Microsoft VS Code/bin/g++"
-      - "C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2023.3.3/bin/g++.com"
-      - "C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2023.3.3/bin/g++.exe"
-      - "C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2023.3.3/bin/g++"
-      - "C:/xampp/php/g++.com"
-      - "C:/xampp/php/g++.exe"
-      - "C:/xampp/php/g++"
-      - "C:/Users/ayman/AppData/Local/ComposerSetup/bin/g++.com"
-      - "C:/Users/ayman/AppData/Local/ComposerSetup/bin/g++.exe"
-      - "C:/Users/ayman/AppData/Local/ComposerSetup/bin/g++"
-      - "C:/Users/ayman/AppData/Roaming/Composer/vendor/bin/g++.com"
-      - "C:/Users/ayman/AppData/Roaming/Composer/vendor/bin/g++.exe"
-      - "C:/Users/ayman/AppData/Roaming/Composer/vendor/bin/g++"
-      - "C:/Users/ayman/AppData/Roaming/npm/g++.com"
-      - "C:/Users/ayman/AppData/Roaming/npm/g++.exe"
-      - "C:/Users/ayman/AppData/Roaming/npm/g++"
-      - "C:/Users/ayman/AppData/Local/GitHubDesktop/bin/g++.com"
-      - "C:/Users/ayman/AppData/Local/GitHubDesktop/bin/g++.exe"
-      - "C:/Users/ayman/AppData/Local/GitHubDesktop/bin/g++"
-      - "C:/Users/ayman/go/bin/g++.com"
-      - "C:/Users/ayman/go/bin/g++.exe"
-      - "C:/Users/ayman/go/bin/g++"
-      - "C:/Program Files/mosquitto/g++.com"
-      - "C:/Program Files/mosquitto/g++.exe"
-      - "C:/Program Files/mosquitto/g++"
-      - "C:/mingw64/bin/g++.com"
-      - "C:/mingw64/bin/g++.exe"
-      - "C:/mingw64/bin/g++"
-      - "C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/g++.com"
-    found: "C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/g++.exe"
+      - "C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/c++.com"
+    found: "C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/c++.exe"
     search_context:
       ENV{PATH}:
         - "c:\\Users\\ayman\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
@@ -2916,7 +3307,7 @@ events:
       - "CMakeLists.txt:2 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-      Compiler: C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/g++.exe 
+      Compiler: C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/c++.exe 
       Build flags: 
       Id flags:  
       
@@ -3886,8 +4277,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-zmrkm8"
-      binary: "C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-zmrkm8"
+      source: "C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-cnwx29"
+      binary: "C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-cnwx29"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -3896,10 +4287,10 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-zmrkm8'
+        Change Dir: 'C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-cnwx29'
         
-        Run Build Command(s): C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/ninja.exe -v cmTC_a39e8
-        [1/2] C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe   -v -o CMakeFiles/cmTC_a39e8.dir/CMakeCCompilerABI.c.obj -c C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/share/cmake-4.1/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/ninja.exe -v cmTC_630de
+        [1/2] C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe   -v -o CMakeFiles/cmTC_630de.dir/CMakeCCompilerABI.c.obj -c C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/share/cmake-4.1/Modules/CMakeCCompilerABI.c
         Using built-in specs.
         COLLECT_GCC=C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe
         OFFLOAD_TARGET_NAMES=nvptx-none
@@ -3908,8 +4299,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 15.2.0 (MinGW-W64 x86_64-msvcrt-posix-seh, built by Brecht Sanders, r1) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a39e8.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a39e8.dir/'
-         C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/cc1.exe -quiet -v -iprefix C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/ -D_REENTRANT C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/share/cmake-4.1/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_a39e8.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o C:\\Users\\ayman\\AppData\\Local\\Temp\\cc1Uf1tN.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_630de.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_630de.dir/'
+         C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/cc1.exe -quiet -v -iprefix C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/ -D_REENTRANT C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/share/cmake-4.1/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_630de.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o C:\\Users\\ayman\\AppData\\Local\\Temp\\ccE5OsNz.s
         GNU C23 (MinGW-W64 x86_64-msvcrt-posix-seh, built by Brecht Sanders, r1) version 15.2.0 (x86_64-w64-mingw32)
         	compiled by GNU C version 15.2.0, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version isl-0.27-GMP
         
@@ -3928,13 +4319,13 @@ events:
          C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include
         End of search list.
         Compiler executable checksum: 4771f173d68fe323f806f2dc68586686
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a39e8.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a39e8.dir/'
-         C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_a39e8.dir/CMakeCCompilerABI.c.obj C:\\Users\\ayman\\AppData\\Local\\Temp\\cc1Uf1tN.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_630de.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_630de.dir/'
+         C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_630de.dir/CMakeCCompilerABI.c.obj C:\\Users\\ayman\\AppData\\Local\\Temp\\ccE5OsNz.s
         GNU assembler version 2.45 (x86_64-w64-mingw32) using BFD version (Binutils for MinGW-W64 x86_64, built by Brecht Sanders, r1) 2.45
         COMPILER_PATH=C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/;C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/;C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/
         LIBRARY_PATH=C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/;C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/;C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/;C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/;C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a39e8.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a39e8.dir/CMakeCCompilerABI.c.'
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe  -v -Wl,-v CMakeFiles/cmTC_a39e8.dir/CMakeCCompilerABI.c.obj -o cmTC_a39e8.exe -Wl,--out-implib,libcmTC_a39e8.dll.a -Wl,--major-image-version,0,--minor-image-version,0   && cd ."
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_630de.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_630de.dir/CMakeCCompilerABI.c.'
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe  -v -Wl,-v CMakeFiles/cmTC_630de.dir/CMakeCCompilerABI.c.obj -o cmTC_630de.exe -Wl,--out-implib,libcmTC_630de.dll.a -Wl,--major-image-version,0,--minor-image-version,0   && cd ."
         Using built-in specs.
         COLLECT_GCC=C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe
         COLLECT_LTO_WRAPPER=C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe
@@ -3946,12 +4337,12 @@ events:
         gcc version 15.2.0 (MinGW-W64 x86_64-msvcrt-posix-seh, built by Brecht Sanders, r1) 
         COMPILER_PATH=C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/;C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/;C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/
         LIBRARY_PATH=C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/;C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/;C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/;C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/;C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a39e8.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_a39e8.'
-         C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe -plugin C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\ayman\\AppData\\Local\\Temp\\ccjESEsY.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_a39e8.exe C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v CMakeFiles/cmTC_a39e8.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_a39e8.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_630de.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_630de.'
+         C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe -plugin C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\ayman\\AppData\\Local\\Temp\\ccYDzc57.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_630de.exe C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v CMakeFiles/cmTC_630de.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_630de.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
         collect2 version 15.2.0
-        C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\ayman\\AppData\\Local\\Temp\\ccjESEsY.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_a39e8.exe C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v CMakeFiles/cmTC_a39e8.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_a39e8.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
+        C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\ayman\\AppData\\Local\\Temp\\ccYDzc57.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_630de.exe C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v CMakeFiles/cmTC_630de.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_630de.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
         GNU ld (Binutils for MinGW-W64 x86_64, built by Brecht Sanders, r1) 2.45
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a39e8.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_a39e8.'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_630de.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_630de.'
         
       exitCode: 0
   -
@@ -3986,10 +4377,10 @@ events:
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: 'C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-zmrkm8']
+        ignore line: [Change Dir: 'C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-cnwx29']
         ignore line: []
-        ignore line: [Run Build Command(s): C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/ninja.exe -v cmTC_a39e8]
-        ignore line: [[1/2] C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe   -v -o CMakeFiles/cmTC_a39e8.dir/CMakeCCompilerABI.c.obj -c C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/share/cmake-4.1/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/ninja.exe -v cmTC_630de]
+        ignore line: [[1/2] C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe   -v -o CMakeFiles/cmTC_630de.dir/CMakeCCompilerABI.c.obj -c C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/share/cmake-4.1/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
@@ -3998,8 +4389,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 15.2.0 (MinGW-W64 x86_64-msvcrt-posix-seh  built by Brecht Sanders  r1) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a39e8.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a39e8.dir/']
-        ignore line: [ C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/cc1.exe -quiet -v -iprefix C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/ -D_REENTRANT C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/share/cmake-4.1/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_a39e8.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o C:\\Users\\ayman\\AppData\\Local\\Temp\\cc1Uf1tN.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_630de.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_630de.dir/']
+        ignore line: [ C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/cc1.exe -quiet -v -iprefix C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/ -D_REENTRANT C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/share/cmake-4.1/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_630de.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o C:\\Users\\ayman\\AppData\\Local\\Temp\\ccE5OsNz.s]
         ignore line: [GNU C23 (MinGW-W64 x86_64-msvcrt-posix-seh  built by Brecht Sanders  r1) version 15.2.0 (x86_64-w64-mingw32)]
         ignore line: [	compiled by GNU C version 15.2.0  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.3.1  isl version isl-0.27-GMP]
         ignore line: []
@@ -4018,8 +4409,8 @@ events:
         ignore line: [ C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 4771f173d68fe323f806f2dc68586686]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a39e8.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a39e8.dir/']
-        ignore line: [ C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_a39e8.dir/CMakeCCompilerABI.c.obj C:\\Users\\ayman\\AppData\\Local\\Temp\\cc1Uf1tN.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_630de.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_630de.dir/']
+        ignore line: [ C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_630de.dir/CMakeCCompilerABI.c.obj C:\\Users\\ayman\\AppData\\Local\\Temp\\ccE5OsNz.s]
         ignore line: [GNU assembler version 2.45 (x86_64-w64-mingw32) using BFD version (Binutils for MinGW-W64 x86_64  built by Brecht Sanders  r1) 2.45]
         ignore line: [COMPILER_PATH=C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/]
         ignore line: [C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/]
@@ -4030,8 +4421,8 @@ events:
         ignore line: [C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/]
         ignore line: [C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a39e8.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a39e8.dir/CMakeCCompilerABI.c.']
-        ignore line: [[2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe  -v -Wl -v CMakeFiles/cmTC_a39e8.dir/CMakeCCompilerABI.c.obj -o cmTC_a39e8.exe -Wl --out-implib libcmTC_a39e8.dll.a -Wl --major-image-version 0 --minor-image-version 0   && cd ."]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_630de.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_630de.dir/CMakeCCompilerABI.c.']
+        ignore line: [[2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe  -v -Wl -v CMakeFiles/cmTC_630de.dir/CMakeCCompilerABI.c.obj -o cmTC_630de.exe -Wl --out-implib libcmTC_630de.dll.a -Wl --major-image-version 0 --minor-image-version 0   && cd ."]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe]
         ignore line: [COLLECT_LTO_WRAPPER=C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe]
@@ -4050,13 +4441,13 @@ events:
         ignore line: [C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/]
         ignore line: [C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a39e8.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_a39e8.']
-        link line: [ C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe -plugin C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\ayman\\AppData\\Local\\Temp\\ccjESEsY.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_a39e8.exe C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v CMakeFiles/cmTC_a39e8.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_a39e8.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_630de.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_630de.']
+        link line: [ C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe -plugin C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\ayman\\AppData\\Local\\Temp\\ccYDzc57.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_630de.exe C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v CMakeFiles/cmTC_630de.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_630de.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
           arg [C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe] ==> ignore
           arg [-plugin] ==> ignore
           arg [C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll] ==> ignore
           arg [-plugin-opt=C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe] ==> ignore
-          arg [-plugin-opt=-fresolution=C:\\Users\\ayman\\AppData\\Local\\Temp\\ccjESEsY.res] ==> ignore
+          arg [-plugin-opt=-fresolution=C:\\Users\\ayman\\AppData\\Local\\Temp\\ccYDzc57.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_eh] ==> ignore
@@ -4078,7 +4469,7 @@ events:
           arg [i386pep] ==> ignore
           arg [-Bdynamic] ==> search dynamic
           arg [-o] ==> ignore
-          arg [cmTC_a39e8.exe] ==> ignore
+          arg [cmTC_630de.exe] ==> ignore
           arg [C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> obj [C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o]
           arg [C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o] ==> obj [C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o]
           arg [-LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0] ==> dir [C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0]
@@ -4088,9 +4479,9 @@ events:
           arg [-LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib] ==> dir [C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib]
           arg [-LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../..] ==> dir [C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../..]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_a39e8.dir/CMakeCCompilerABI.c.obj] ==> ignore
+          arg [CMakeFiles/cmTC_630de.dir/CMakeCCompilerABI.c.obj] ==> ignore
           arg [--out-implib] ==> ignore
-          arg [libcmTC_a39e8.dll.a] ==> ignore
+          arg [libcmTC_630de.dll.a] ==> ignore
           arg [--major-image-version] ==> ignore
           arg [0] ==> ignore
           arg [--minor-image-version] ==> ignore
@@ -4172,8 +4563,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-i6hptc"
-      binary: "C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-i6hptc"
+      source: "C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-zzsa06"
+      binary: "C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-zzsa06"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -4183,20 +4574,20 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-i6hptc'
+        Change Dir: 'C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-zzsa06'
         
-        Run Build Command(s): C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/ninja.exe -v cmTC_f6607
-        [1/2] C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\g++.exe   -v -o CMakeFiles/cmTC_f6607.dir/CMakeCXXCompilerABI.cpp.obj -c C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/ninja.exe -v cmTC_c8732
+        [1/2] C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\c++.exe   -v -o CMakeFiles/cmTC_c8732.dir/CMakeCXXCompilerABI.cpp.obj -c C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
-        COLLECT_GCC=C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\g++.exe
+        COLLECT_GCC=C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\c++.exe
         OFFLOAD_TARGET_NAMES=nvptx-none
         Target: x86_64-w64-mingw32
         Configured with: ../configure --prefix=/R/winlibs_staging_msvcrt64/inst_gcc-15.2.0/share/gcc --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --enable-offload-targets=nvptx-none --with-pkgversion='MinGW-W64 x86_64-msvcrt-posix-seh, built by Brecht Sanders, r1' --with-tune=generic --enable-checking=release --enable-threads=posix --disable-sjlj-exceptions --disable-libunwind-exceptions --disable-serial-configure --disable-bootstrap --enable-host-shared --enable-plugin --disable-default-ssp --disable-rpath --disable-libstdcxx-debug --disable-version-specific-runtime-libs --disable-symvers --enable-languages=c,c++,fortran,lto,objc,obj-c++ --disable-gold --disable-nls --disable-stage1-checking --disable-win32-registry --disable-multilib --enable-ld --enable-libquadmath --enable-libada --enable-libssp --enable-libstdcxx --enable-lto --enable-fully-dynamic-string --enable-libgomp --enable-graphite --enable-mingw-wildcard --enable-libstdcxx-time --enable-libstdcxx-pch --with-mpc=/c/Prog/winlibs_staging_msvcrt/custombuilt64 --with-mpfr=/c/Prog/winlibs_staging_msvcrt/custombuilt64 --with-gmp=/c/Prog/winlibs_staging_msvcrt/custombuilt64 --with-isl=/c/Prog/winlibs_staging_msvcrt/custombuilt64 --disable-libstdcxx-backtrace --enable-install-libiberty --enable-__cxa_atexit --without-included-gettext --with-diagnostics-color=auto --enable-clocale=generic --enable-libgdiagnostics --with-libiconv --with-system-zlib --with-build-sysroot=/R/winlibs_staging_msvcrt64/gcc-15.2.0/build_mingw/mingw-w64 CFLAGS='-I/c/Prog/winlibs_staging_msvcrt/custombuilt64/include/libdl-win32   -march=nocona -msahf -mtune=generic -O2 -Wno-error=format' CXXFLAGS='-Wno-int-conversion  -march=nocona -msahf -mtune=generic -O2' LDFLAGS='-pthread -Wl,--no-insert-timestamp -Wl,--dynamicbase -Wl,--high-entropy-va -Wl,--nxcompat -Wl,--tsaware' LD=/c/Prog/winlibs_staging_msvcrt/custombuilt64/share/binutils/bin/ld.exe
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 15.2.0 (MinGW-W64 x86_64-msvcrt-posix-seh, built by Brecht Sanders, r1) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f6607.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_f6607.dir/'
-         C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/cc1plus.exe -quiet -v -iprefix C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/ -D_REENTRANT C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_f6607.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o C:\\Users\\ayman\\AppData\\Local\\Temp\\cce9azMh.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c8732.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_c8732.dir/'
+         C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/cc1plus.exe -quiet -v -iprefix C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/ -D_REENTRANT C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_c8732.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o C:\\Users\\ayman\\AppData\\Local\\Temp\\cc9xDboe.s
         GNU C++17 (MinGW-W64 x86_64-msvcrt-posix-seh, built by Brecht Sanders, r1) version 15.2.0 (x86_64-w64-mingw32)
         	compiled by GNU C version 15.2.0, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version isl-0.27-GMP
         
@@ -4221,15 +4612,15 @@ events:
          C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include
         End of search list.
         Compiler executable checksum: 43a2d58255b90554ada10a53fa1a7228
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f6607.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_f6607.dir/'
-         C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_f6607.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\ayman\\AppData\\Local\\Temp\\cce9azMh.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c8732.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_c8732.dir/'
+         C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_c8732.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\ayman\\AppData\\Local\\Temp\\cc9xDboe.s
         GNU assembler version 2.45 (x86_64-w64-mingw32) using BFD version (Binutils for MinGW-W64 x86_64, built by Brecht Sanders, r1) 2.45
         COMPILER_PATH=C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/;C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/;C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/
         LIBRARY_PATH=C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/;C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/;C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/;C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/;C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f6607.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_f6607.dir/CMakeCXXCompilerABI.cpp.'
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\g++.exe  -v -Wl,-v CMakeFiles/cmTC_f6607.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_f6607.exe -Wl,--out-implib,libcmTC_f6607.dll.a -Wl,--major-image-version,0,--minor-image-version,0   && cd ."
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c8732.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_c8732.dir/CMakeCXXCompilerABI.cpp.'
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\c++.exe  -v -Wl,-v CMakeFiles/cmTC_c8732.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_c8732.exe -Wl,--out-implib,libcmTC_c8732.dll.a -Wl,--major-image-version,0,--minor-image-version,0   && cd ."
         Using built-in specs.
-        COLLECT_GCC=C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\g++.exe
+        COLLECT_GCC=C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\c++.exe
         COLLECT_LTO_WRAPPER=C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe
         OFFLOAD_TARGET_NAMES=nvptx-none
         Target: x86_64-w64-mingw32
@@ -4239,12 +4630,12 @@ events:
         gcc version 15.2.0 (MinGW-W64 x86_64-msvcrt-posix-seh, built by Brecht Sanders, r1) 
         COMPILER_PATH=C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/;C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/;C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/
         LIBRARY_PATH=C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/;C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/;C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/;C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/;C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f6607.exe' '-foffload-options=-l_GCC_stdc++' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_f6607.'
-         C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe -plugin C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\ayman\\AppData\\Local\\Temp\\ccfL5Esq.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_f6607.exe C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v CMakeFiles/cmTC_f6607.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_f6607.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c8732.exe' '-foffload-options=-l_GCC_stdc++' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_c8732.'
+         C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe -plugin C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\ayman\\AppData\\Local\\Temp\\ccuC2BuD.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_c8732.exe C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v CMakeFiles/cmTC_c8732.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_c8732.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
         collect2 version 15.2.0
-        C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\ayman\\AppData\\Local\\Temp\\ccfL5Esq.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_f6607.exe C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v CMakeFiles/cmTC_f6607.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_f6607.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
+        C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\ayman\\AppData\\Local\\Temp\\ccuC2BuD.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_c8732.exe C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v CMakeFiles/cmTC_c8732.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_c8732.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
         GNU ld (Binutils for MinGW-W64 x86_64, built by Brecht Sanders, r1) 2.45
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f6607.exe' '-foffload-options=-l_GCC_stdc++' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_f6607.'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c8732.exe' '-foffload-options=-l_GCC_stdc++' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_c8732.'
         
       exitCode: 0
   -
@@ -4285,20 +4676,20 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: 'C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-i6hptc']
+        ignore line: [Change Dir: 'C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-zzsa06']
         ignore line: []
-        ignore line: [Run Build Command(s): C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/ninja.exe -v cmTC_f6607]
-        ignore line: [[1/2] C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\g++.exe   -v -o CMakeFiles/cmTC_f6607.dir/CMakeCXXCompilerABI.cpp.obj -c C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/ninja.exe -v cmTC_c8732]
+        ignore line: [[1/2] C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\c++.exe   -v -o CMakeFiles/cmTC_c8732.dir/CMakeCXXCompilerABI.cpp.obj -c C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\g++.exe]
+        ignore line: [COLLECT_GCC=C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\c++.exe]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
         ignore line: [Target: x86_64-w64-mingw32]
         ignore line: [Configured with: ../configure --prefix=/R/winlibs_staging_msvcrt64/inst_gcc-15.2.0/share/gcc --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --enable-offload-targets=nvptx-none --with-pkgversion='MinGW-W64 x86_64-msvcrt-posix-seh, built by Brecht Sanders, r1' --with-tune=generic --enable-checking=release --enable-threads=posix --disable-sjlj-exceptions --disable-libunwind-exceptions --disable-serial-configure --disable-bootstrap --enable-host-shared --enable-plugin --disable-default-ssp --disable-rpath --disable-libstdcxx-debug --disable-version-specific-runtime-libs --disable-symvers --enable-languages=c,c++,fortran,lto,objc,obj-c++ --disable-gold --disable-nls --disable-stage1-checking --disable-win32-registry --disable-multilib --enable-ld --enable-libquadmath --enable-libada --enable-libssp --enable-libstdcxx --enable-lto --enable-fully-dynamic-string --enable-libgomp --enable-graphite --enable-mingw-wildcard --enable-libstdcxx-time --enable-libstdcxx-pch --with-mpc=/c/Prog/winlibs_staging_msvcrt/custombuilt64 --with-mpfr=/c/Prog/winlibs_staging_msvcrt/custombuilt64 --with-gmp=/c/Prog/winlibs_staging_msvcrt/custombuilt64 --with-isl=/c/Prog/winlibs_staging_msvcrt/custombuilt64 --disable-libstdcxx-backtrace --enable-install-libiberty --enable-__cxa_atexit --without-included-gettext --with-diagnostics-color=auto --enable-clocale=generic --enable-libgdiagnostics --with-libiconv --with-system-zlib --with-build-sysroot=/R/winlibs_staging_msvcrt64/gcc-15.2.0/build_mingw/mingw-w64 CFLAGS='-I/c/Prog/winlibs_staging_msvcrt/custombuilt64/include/libdl-win32   -march=nocona -msahf -mtune=generic -O2 -Wno-error=format' CXXFLAGS='-Wno-int-conversion  -march=nocona -msahf -mtune=generic -O2' LDFLAGS='-pthread -Wl,--no-insert-timestamp -Wl,--dynamicbase -Wl,--high-entropy-va -Wl,--nxcompat -Wl,--tsaware' LD=/c/Prog/winlibs_staging_msvcrt/custombuilt64/share/binutils/bin/ld.exe]
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 15.2.0 (MinGW-W64 x86_64-msvcrt-posix-seh  built by Brecht Sanders  r1) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f6607.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_f6607.dir/']
-        ignore line: [ C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/cc1plus.exe -quiet -v -iprefix C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/ -D_REENTRANT C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_f6607.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o C:\\Users\\ayman\\AppData\\Local\\Temp\\cce9azMh.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c8732.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_c8732.dir/']
+        ignore line: [ C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/cc1plus.exe -quiet -v -iprefix C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/ -D_REENTRANT C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_c8732.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o C:\\Users\\ayman\\AppData\\Local\\Temp\\cc9xDboe.s]
         ignore line: [GNU C++17 (MinGW-W64 x86_64-msvcrt-posix-seh  built by Brecht Sanders  r1) version 15.2.0 (x86_64-w64-mingw32)]
         ignore line: [	compiled by GNU C version 15.2.0  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.3.1  isl version isl-0.27-GMP]
         ignore line: []
@@ -4323,8 +4714,8 @@ events:
         ignore line: [ C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 43a2d58255b90554ada10a53fa1a7228]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f6607.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_f6607.dir/']
-        ignore line: [ C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_f6607.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\ayman\\AppData\\Local\\Temp\\cce9azMh.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c8732.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_c8732.dir/']
+        ignore line: [ C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_c8732.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\ayman\\AppData\\Local\\Temp\\cc9xDboe.s]
         ignore line: [GNU assembler version 2.45 (x86_64-w64-mingw32) using BFD version (Binutils for MinGW-W64 x86_64  built by Brecht Sanders  r1) 2.45]
         ignore line: [COMPILER_PATH=C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/]
         ignore line: [C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/]
@@ -4335,10 +4726,10 @@ events:
         ignore line: [C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/]
         ignore line: [C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f6607.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_f6607.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [[2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\g++.exe  -v -Wl -v CMakeFiles/cmTC_f6607.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_f6607.exe -Wl --out-implib libcmTC_f6607.dll.a -Wl --major-image-version 0 --minor-image-version 0   && cd ."]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c8732.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_c8732.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [[2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\c++.exe  -v -Wl -v CMakeFiles/cmTC_c8732.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_c8732.exe -Wl --out-implib libcmTC_c8732.dll.a -Wl --major-image-version 0 --minor-image-version 0   && cd ."]
         ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\g++.exe]
+        ignore line: [COLLECT_GCC=C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\c++.exe]
         ignore line: [COLLECT_LTO_WRAPPER=C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
         ignore line: [Target: x86_64-w64-mingw32]
@@ -4355,13 +4746,13 @@ events:
         ignore line: [C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/]
         ignore line: [C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f6607.exe' '-foffload-options=-l_GCC_stdc++' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_f6607.']
-        link line: [ C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe -plugin C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\ayman\\AppData\\Local\\Temp\\ccfL5Esq.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_f6607.exe C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v CMakeFiles/cmTC_f6607.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_f6607.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c8732.exe' '-foffload-options=-l_GCC_stdc++' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_c8732.']
+        link line: [ C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe -plugin C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\ayman\\AppData\\Local\\Temp\\ccuC2BuD.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_c8732.exe C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v CMakeFiles/cmTC_c8732.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_c8732.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
           arg [C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe] ==> ignore
           arg [-plugin] ==> ignore
           arg [C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll] ==> ignore
           arg [-plugin-opt=C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe] ==> ignore
-          arg [-plugin-opt=-fresolution=C:\\Users\\ayman\\AppData\\Local\\Temp\\ccfL5Esq.res] ==> ignore
+          arg [-plugin-opt=-fresolution=C:\\Users\\ayman\\AppData\\Local\\Temp\\ccuC2BuD.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
@@ -4383,7 +4774,7 @@ events:
           arg [i386pep] ==> ignore
           arg [-Bdynamic] ==> search dynamic
           arg [-o] ==> ignore
-          arg [cmTC_f6607.exe] ==> ignore
+          arg [cmTC_c8732.exe] ==> ignore
           arg [C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> obj [C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o]
           arg [C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o] ==> obj [C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o]
           arg [-LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0] ==> dir [C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0]
@@ -4393,9 +4784,9 @@ events:
           arg [-LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib] ==> dir [C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib]
           arg [-LC:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../..] ==> dir [C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../..]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_f6607.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
+          arg [CMakeFiles/cmTC_c8732.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
           arg [--out-implib] ==> ignore
-          arg [libcmTC_f6607.dll.a] ==> ignore
+          arg [libcmTC_c8732.dll.a] ==> ignore
           arg [--major-image-version] ==> ignore
           arg [0] ==> ignore
           arg [--minor-image-version] ==> ignore
@@ -5080,8 +5471,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-9n6ndy"
-      binary: "C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-9n6ndy"
+      source: "C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-n2ltre"
+      binary: "C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-n2ltre"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -5091,11 +5482,11 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-9n6ndy'
+        Change Dir: 'C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-n2ltre'
         
-        Run Build Command(s): C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/ninja.exe -v cmTC_22868
-        [1/2] C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_22868.dir/src.c.obj -c C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-9n6ndy/src.c
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe   CMakeFiles/cmTC_22868.dir/src.c.obj -o cmTC_22868.exe -Wl,--out-implib,libcmTC_22868.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        Run Build Command(s): C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/ninja.exe -v cmTC_53cc5
+        [1/2] C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_53cc5.dir/src.c.obj -c C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-n2ltre/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe   CMakeFiles/cmTC_53cc5.dir/src.c.obj -o cmTC_53cc5.exe -Wl,--out-implib,libcmTC_53cc5.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
         
       exitCode: 0
   -
@@ -5106,8 +5497,8 @@ events:
     checks:
       - "Looking for dinput.h"
     directories:
-      source: "C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-3d6479"
-      binary: "C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-3d6479"
+      source: "C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-ysmm1n"
+      binary: "C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-ysmm1n"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -5117,11 +5508,11 @@ events:
       variable: "DINPUT_H_FOUND"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-3d6479'
+        Change Dir: 'C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-ysmm1n'
         
-        Run Build Command(s): C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/ninja.exe -v cmTC_766c4
-        [1/2] C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe    -o CMakeFiles/cmTC_766c4.dir/CheckIncludeFile.c.obj -c C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-3d6479/CheckIncludeFile.c
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe   CMakeFiles/cmTC_766c4.dir/CheckIncludeFile.c.obj -o cmTC_766c4.exe -Wl,--out-implib,libcmTC_766c4.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        Run Build Command(s): C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/ninja.exe -v cmTC_69744
+        [1/2] C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe    -o CMakeFiles/cmTC_69744.dir/CheckIncludeFile.c.obj -c C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-ysmm1n/CheckIncludeFile.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe   CMakeFiles/cmTC_69744.dir/CheckIncludeFile.c.obj -o cmTC_69744.exe -Wl,--out-implib,libcmTC_69744.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
         
       exitCode: 0
   -
@@ -5132,8 +5523,8 @@ events:
     checks:
       - "Looking for xinput.h"
     directories:
-      source: "C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-xe4p28"
-      binary: "C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-xe4p28"
+      source: "C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-1lokob"
+      binary: "C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-1lokob"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -5143,11 +5534,11 @@ events:
       variable: "XINPUT_H_FOUND"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-xe4p28'
+        Change Dir: 'C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-1lokob'
         
-        Run Build Command(s): C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/ninja.exe -v cmTC_7bde4
-        [1/2] C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe    -o CMakeFiles/cmTC_7bde4.dir/CheckIncludeFile.c.obj -c C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-xe4p28/CheckIncludeFile.c
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe   CMakeFiles/cmTC_7bde4.dir/CheckIncludeFile.c.obj -o cmTC_7bde4.exe -Wl,--out-implib,libcmTC_7bde4.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        Run Build Command(s): C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/ninja.exe -v cmTC_1dd48
+        [1/2] C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe    -o CMakeFiles/cmTC_1dd48.dir/CheckIncludeFile.c.obj -c C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-1lokob/CheckIncludeFile.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe   CMakeFiles/cmTC_1dd48.dir/CheckIncludeFile.c.obj -o cmTC_1dd48.exe -Wl,--out-implib,libcmTC_1dd48.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
         
       exitCode: 0
   -
@@ -5160,8 +5551,8 @@ events:
     checks:
       - "Performing Test _GLFW_HAS_DEP"
     directories:
-      source: "C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-x2912y"
-      binary: "C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-x2912y"
+      source: "C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-r1iws3"
+      binary: "C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-r1iws3"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -5171,11 +5562,11 @@ events:
       variable: "_GLFW_HAS_DEP"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-x2912y'
+        Change Dir: 'C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-r1iws3'
         
-        Run Build Command(s): C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/ninja.exe -v cmTC_a0453
-        [1/2] C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe -D_GLFW_HAS_DEP  -Wl,--nxcompat -o CMakeFiles/cmTC_a0453.dir/src.c.obj -c C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-x2912y/src.c
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe -Wl,--nxcompat  CMakeFiles/cmTC_a0453.dir/src.c.obj -o cmTC_a0453.exe -Wl,--out-implib,libcmTC_a0453.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        Run Build Command(s): C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/ninja.exe -v cmTC_e109c
+        [1/2] C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe -D_GLFW_HAS_DEP  -Wl,--nxcompat -o CMakeFiles/cmTC_e109c.dir/src.c.obj -c C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-r1iws3/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe -Wl,--nxcompat  CMakeFiles/cmTC_e109c.dir/src.c.obj -o cmTC_e109c.exe -Wl,--out-implib,libcmTC_e109c.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
         
       exitCode: 0
   -
@@ -5188,8 +5579,8 @@ events:
     checks:
       - "Performing Test _GLFW_HAS_ASLR"
     directories:
-      source: "C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-fb8z9p"
-      binary: "C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-fb8z9p"
+      source: "C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-z3datd"
+      binary: "C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-z3datd"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -5199,11 +5590,11 @@ events:
       variable: "_GLFW_HAS_ASLR"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-fb8z9p'
+        Change Dir: 'C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-z3datd'
         
-        Run Build Command(s): C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/ninja.exe -v cmTC_b716f
-        [1/2] C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe -D_GLFW_HAS_ASLR  -Wl,--dynamicbase -o CMakeFiles/cmTC_b716f.dir/src.c.obj -c C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-fb8z9p/src.c
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe -Wl,--dynamicbase  CMakeFiles/cmTC_b716f.dir/src.c.obj -o cmTC_b716f.exe -Wl,--out-implib,libcmTC_b716f.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        Run Build Command(s): C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/ninja.exe -v cmTC_2a710
+        [1/2] C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe -D_GLFW_HAS_ASLR  -Wl,--dynamicbase -o CMakeFiles/cmTC_2a710.dir/src.c.obj -c C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-z3datd/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe -Wl,--dynamicbase  CMakeFiles/cmTC_2a710.dir/src.c.obj -o cmTC_2a710.exe -Wl,--out-implib,libcmTC_2a710.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
         
       exitCode: 0
   -
@@ -5216,8 +5607,8 @@ events:
     checks:
       - "Performing Test _GLFW_HAS_64ASLR"
     directories:
-      source: "C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-qnd40w"
-      binary: "C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-qnd40w"
+      source: "C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-u8xmgp"
+      binary: "C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-u8xmgp"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -5227,11 +5618,11 @@ events:
       variable: "_GLFW_HAS_64ASLR"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-qnd40w'
+        Change Dir: 'C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-u8xmgp'
         
-        Run Build Command(s): C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/ninja.exe -v cmTC_3cc51
-        [1/2] C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe -D_GLFW_HAS_64ASLR  -Wl,--high-entropy-va -o CMakeFiles/cmTC_3cc51.dir/src.c.obj -c C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-qnd40w/src.c
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe -Wl,--high-entropy-va  CMakeFiles/cmTC_3cc51.dir/src.c.obj -o cmTC_3cc51.exe -Wl,--out-implib,libcmTC_3cc51.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        Run Build Command(s): C:/Users/ayman/Downloads/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1/mingw64/bin/ninja.exe -v cmTC_ff675
+        [1/2] C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe -D_GLFW_HAS_64ASLR  -Wl,--high-entropy-va -o CMakeFiles/cmTC_ff675.dir/src.c.obj -c C:/Users/ayman/opengl_project/build/CMakeFiles/CMakeScratch/TryCompile-u8xmgp/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\ayman\\Downloads\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gcc.exe -Wl,--high-entropy-va  CMakeFiles/cmTC_ff675.dir/src.c.obj -o cmTC_ff675.exe -Wl,--out-implib,libcmTC_ff675.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
         
       exitCode: 0
   -

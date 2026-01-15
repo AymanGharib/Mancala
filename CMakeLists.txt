@@ -56,18 +56,19 @@ target_include_directories(stb_image INTERFACE
     external/stb
 )
 
-# Sources (match your folders)
-file(GLOB_RECURSE SOURCES
-    core/*.cpp core/*.h
-    Rendering/*.cpp Rendering/*.h
-    Scene/*.cpp Scene/*.h
-    Game/*.cpp Game/*.h
+# Sources (reliable)
+file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
+    "${CMAKE_SOURCE_DIR}/core/*.cpp"
+    "${CMAKE_SOURCE_DIR}/Rendering/*.cpp"
+    "${CMAKE_SOURCE_DIR}/Scene/*.cpp"
+    "${CMAKE_SOURCE_DIR}/Game/*.cpp"
 )
 
 add_executable(${PROJECT_NAME}
     main.cpp
     ${SOURCES}
 )
+
 
 target_include_directories(${PROJECT_NAME} PRIVATE
     .
