@@ -1,0 +1,21 @@
+# ninja log v7
+3	151	7901952342700436	glm-populate-prefix/src/glm-populate-stamp/glm-populate-mkdir	dc4289ad5dc7cbba
+3	151	7901952342700436	C:/Users/ayman/opengl_project/build/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-mkdir	dc4289ad5dc7cbba
+151	35020	7901952691376599	glm-populate-prefix/src/glm-populate-stamp/glm-populate-download	9c527d8791d29124
+151	35020	7901952691376599	C:/Users/ayman/opengl_project/build/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-download	9c527d8791d29124
+35020	35243	7901952691486999	glm-populate-prefix/src/glm-populate-stamp/glm-populate-update	9c65b4809cc2d123
+35020	35243	7901952691486999	C:/Users/ayman/opengl_project/build/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-update	9c65b4809cc2d123
+35245	35358	7901952694801010	glm-populate-prefix/src/glm-populate-stamp/glm-populate-patch	bbf0b4d8aba66ee8
+35245	35358	7901952694801010	C:/Users/ayman/opengl_project/build/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-patch	bbf0b4d8aba66ee8
+35358	35470	7901952695920996	glm-populate-prefix/src/glm-populate-stamp/glm-populate-configure	662f45c4feee904a
+35358	35470	7901952695920996	C:/Users/ayman/opengl_project/build/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-configure	662f45c4feee904a
+35470	35575	7901952696971006	glm-populate-prefix/src/glm-populate-stamp/glm-populate-build	c9014c895519854a
+35470	35575	7901952696971006	C:/Users/ayman/opengl_project/build/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-build	c9014c895519854a
+35576	35689	7901952698111009	glm-populate-prefix/src/glm-populate-stamp/glm-populate-install	6d7dd56013918fbb
+35576	35689	7901952698111009	C:/Users/ayman/opengl_project/build/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-install	6d7dd56013918fbb
+35690	35804	7901952699251013	glm-populate-prefix/src/glm-populate-stamp/glm-populate-test	1ec1ac7bf2de9a59
+35690	35804	7901952699251013	C:/Users/ayman/opengl_project/build/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-test	1ec1ac7bf2de9a59
+35804	35990	7901952701121040	CMakeFiles/glm-populate-complete	66bffe546777067
+35804	35990	7901952701121040	glm-populate-prefix/src/glm-populate-stamp/glm-populate-done	66bffe546777067
+35804	35990	7901952701121040	C:/Users/ayman/opengl_project/build/_deps/glm-subbuild/CMakeFiles/glm-populate-complete	66bffe546777067
+35804	35990	7901952701121040	C:/Users/ayman/opengl_project/build/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-done	66bffe546777067

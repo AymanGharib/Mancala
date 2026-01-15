@@ -1,0 +1,21 @@
+# ninja log v7
+3	140	7901952128841310	glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-mkdir	45e74592afa9d89d
+3	140	7901952128841310	C:/Users/ayman/opengl_project/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-mkdir	45e74592afa9d89d
+140	10550	7901952232915831	glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-download	c55826c308a085fc
+140	10550	7901952232915831	C:/Users/ayman/opengl_project/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-download	c55826c308a085fc
+10551	10804	7901952233015777	glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-update	9600c8156802ece3
+10551	10804	7901952233015777	C:/Users/ayman/opengl_project/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-update	9600c8156802ece3
+10804	10938	7901952236782519	glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-patch	9e426753275921f2
+10804	10938	7901952236782519	C:/Users/ayman/opengl_project/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-patch	9e426753275921f2
+10938	11081	7901952238242502	glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-configure	2637557bc73b01a2
+10938	11081	7901952238242502	C:/Users/ayman/opengl_project/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-configure	2637557bc73b01a2
+11082	11204	7901952239479975	glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-build	735166ca94cf3452
+11082	11204	7901952239479975	C:/Users/ayman/opengl_project/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-build	735166ca94cf3452
+11204	11343	7901952240849430	glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-install	2257d72fabb53dfc
+11204	11343	7901952240849430	C:/Users/ayman/opengl_project/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-install	2257d72fabb53dfc
+11345	11499	7901952242404203	glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-test	b1a5d38594670bbd
+11345	11499	7901952242404203	C:/Users/ayman/opengl_project/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-test	b1a5d38594670bbd
+11499	11692	7901952244374248	CMakeFiles/glfw-populate-complete	2ed021e83f62544e
+11499	11692	7901952244374248	glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-done	2ed021e83f62544e
+11499	11692	7901952244374248	C:/Users/ayman/opengl_project/build/_deps/glfw-subbuild/CMakeFiles/glfw-populate-complete	2ed021e83f62544e
+11499	11692	7901952244374248	C:/Users/ayman/opengl_project/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-done	2ed021e83f62544e
