@@ -64,6 +64,51 @@ file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
     "${CMAKE_SOURCE_DIR}/Game/*.cpp"
 )
 
+
+
+FetchContent_Declare(
+  imgui
+  GIT_REPOSITORY https://github.com/ocornut/imgui.git
+  GIT_TAG v1.91.0
+)
+
+FetchContent_GetProperties(imgui)
+if(NOT imgui_POPULATED)
+  FetchContent_Populate(imgui)
+endif()
+
+add_library(imgui STATIC
+  ${imgui_SOURCE_DIR}/imgui.cpp
+  ${imgui_SOURCE_DIR}/imgui_draw.cpp
+  ${imgui_SOURCE_DIR}/imgui_tables.cpp
+  ${imgui_SOURCE_DIR}/imgui_widgets.cpp
+
+  ${imgui_SOURCE_DIR}/backends/imgui_impl_glfw.cpp
+  ${imgui_SOURCE_DIR}/backends/imgui_impl_opengl3.cpp
+)
+
+target_include_directories(imgui PUBLIC
+  ${imgui_SOURCE_DIR}
+  ${imgui_SOURCE_DIR}/backends
+)
+
+# Tell ImGui OpenGL backend we use GLAD loader
+target_compile_definitions(imgui PUBLIC IMGUI_IMPL_OPENGL_LOADER_GLAD)
+
+# Link ImGui against GLFW + OpenGL (glad isn't required here, but ok if you want)
+target_link_libraries(imgui PUBLIC glfw OpenGL::GL)
+
+
+
+
+
+
+
+
+
+
+
+
 add_executable(${PROJECT_NAME}
     main.cpp
     ${SOURCES}
@@ -83,4 +128,5 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     glad
     glm::glm
     stb_image
+    imgui
 )
