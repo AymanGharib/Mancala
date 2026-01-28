@@ -47,6 +47,9 @@ struct AppState {
     bool showHelp  = true;
     bool showStats = true;
 
+    // Lighting toggle
+    bool lightsEnabled = true;
+
     // timing
     float deltaTime  = 0.0f;
     float lastFrame  = 0.0f;
@@ -99,11 +102,11 @@ int main() {
     try {
         // Create window
         Window::Config config;
-        config.width = WINDOW_WIDTH;
-        config.height = WINDOW_HEIGHT;
-        config.title = "Mancala 3D - Interactive Game";
+        config.width       = WINDOW_WIDTH;
+        config.height      = WINDOW_HEIGHT;
+        config.title       = "Mancala 3D - Interactive Game";
         config.msaaSamples = 4;
-        config.vsync = true;
+        config.vsync       = true;
 
         Window window(config);
 
@@ -157,6 +160,7 @@ int main() {
         std::cout << "=== DISPLAY CONTROLS ===\n";
         std::cout << "  M                  : Cycle render mode\n";
         std::cout << "  T                  : Change theme\n";
+        std::cout << "  L                  : Toggle lighting\n";
         std::cout << "  H                  : Toggle help\n";
         std::cout << "  F                  : Toggle stats\n";
         std::cout << "  ESC                : Exit\n";
@@ -175,8 +179,8 @@ int main() {
             processInput(window, state);
 
             // Update camera from Window orbit controls
-            float yaw = window.getYaw();
-            float pitch = window.getPitch();
+            float yaw      = window.getYaw();
+            float pitch    = window.getPitch();
             float distance = window.getDistance();
 
             glm::vec3 direction;
@@ -202,25 +206,33 @@ int main() {
 
             shader.use();
 
-            glm::mat4 view = camera.getViewMatrix();
-            glm::mat4 projection = camera.getProjectionMatrix();
-            shader.setMat4("view", view);
-            shader.setMat4("projection", projection);
+            // matrices
+            shader.setMat4("view", camera.getViewMatrix());
+            shader.setMat4("projection", camera.getProjectionMatrix());
             shader.setVec3("viewPos", camera.getPosition());
 
-            // lights
-            shader.setInt("numLights", static_cast<int>(state.lights.size()));
-            for (size_t i = 0; i < state.lights.size(); ++i) {
-                std::string base = "lights[" + std::to_string(i) + "]";
-                shader.setVec3(base + ".position", state.lights[i].position);
-                shader.setVec3(base + ".color", state.lights[i].color);
-                shader.setFloat(base + ".intensity", state.lights[i].intensity);
-            }
-
+            // textures usage depends on render mode
             shader.setBool("useTextures", state.renderMode.shouldUseTextures());
 
-            auto objects = state.game->getAllObjects();
-            renderScene(shader, objects, state);
+            // lighting toggle
+            // IMPORTANT: your phong.fs must have:
+            //   uniform bool lightingEnabled;
+            shader.setBool("lightingEnabled", state.lightsEnabled);
+
+            if (state.lightsEnabled) {
+                shader.setInt("numLights", static_cast<int>(state.lights.size()));
+                for (size_t i = 0; i < state.lights.size(); ++i) {
+                    std::string base = "lights[" + std::to_string(i) + "]";
+                    shader.setVec3(base + ".position", state.lights[i].position);
+                    shader.setVec3(base + ".color", state.lights[i].color);
+                    shader.setFloat(base + ".intensity", state.lights[i].intensity);
+                }
+            } else {
+                shader.setInt("numLights", 0);
+            }
+
+            // draw objects
+            renderScene(shader, state.game->getAllObjects(), state);
 
             // ===== ImGui frame =====
             ImGui_ImplOpenGL3_NewFrame();
@@ -249,6 +261,7 @@ int main() {
         // cleanup
         delete state.game;
         state.textureMgr.cleanup();
+
         return 0;
     }
     catch (const std::exception& e) {
@@ -260,21 +273,23 @@ int main() {
 // ===== IMPLEMENTATION =====
 
 static void setupLights(AppState& state) {
+    state.lights.clear();
+
     AppState::Light mainLight;
-    mainLight.position = glm::vec3(5.0f, 8.0f, 5.0f);
-    mainLight.color = glm::vec3(1.0f, 0.95f, 0.85f);
+    mainLight.position  = glm::vec3(5.0f, 8.0f, 5.0f);
+    mainLight.color     = glm::vec3(1.0f, 0.95f, 0.85f);
     mainLight.intensity = 1.0f;
     state.lights.push_back(mainLight);
 
     AppState::Light fillLight;
-    fillLight.position = glm::vec3(-4.0f, 6.0f, 3.0f);
-    fillLight.color = glm::vec3(0.6f, 0.7f, 0.8f);
+    fillLight.position  = glm::vec3(-4.0f, 6.0f, 3.0f);
+    fillLight.color     = glm::vec3(0.6f, 0.7f, 0.8f);
     fillLight.intensity = 0.5f;
     state.lights.push_back(fillLight);
 
     AppState::Light backLight;
-    backLight.position = glm::vec3(0.0f, 4.0f, -6.0f);
-    backLight.color = glm::vec3(0.8f, 0.8f, 1.0f);
+    backLight.position  = glm::vec3(0.0f, 4.0f, -6.0f);
+    backLight.color     = glm::vec3(0.8f, 0.8f, 1.0f);
     backLight.intensity = 0.3f;
     state.lights.push_back(backLight);
 }
@@ -289,14 +304,21 @@ static void processInput(Window& window, AppState& state) {
     if (window.isKeyPressed(GLFW_KEY_E)) state.cameraTarget.y += CAMERA_PAN_SPEED;
 
     // One-press actions (debounced)
-    static bool rWas=false, mWas=false, tWas=false, hWas=false, fWas=false;
+    static bool rWas=false, mWas=false, tWas=false, hWas=false, fWas=false, lWas=false;
 
     bool r = window.isKeyPressed(GLFW_KEY_R);
-    if (r && !rWas) { state.game->reset(); applyThemeToGame(state); std::cout << "[Game] Reset!\n"; }
+    if (r && !rWas) {
+        state.game->reset();
+        applyThemeToGame(state);
+        std::cout << "[Game] Reset!\n";
+    }
     rWas = r;
 
     bool m = window.isKeyPressed(GLFW_KEY_M);
-    if (m && !mWas) { state.renderMode.cycleMode(); std::cout << "[Display] Mode: " << state.renderMode.getModeName() << "\n"; }
+    if (m && !mWas) {
+        state.renderMode.cycleMode();
+        std::cout << "[Display] Mode: " << state.renderMode.getModeName() << "\n";
+    }
     mWas = m;
 
     bool t = window.isKeyPressed(GLFW_KEY_T);
@@ -308,17 +330,23 @@ static void processInput(Window& window, AppState& state) {
     }
     tWas = t;
 
+    bool l = window.isKeyPressed(GLFW_KEY_L);
+    if (l && !lWas) {
+        state.lightsEnabled = !state.lightsEnabled;
+        std::cout << "[Lighting] " << (state.lightsEnabled ? "ON" : "OFF") << "\n";
+    }
+    lWas = l;
+
     bool h = window.isKeyPressed(GLFW_KEY_H);
-    if (h && !hWas) { state.showHelp = !state.showHelp; }
+    if (h && !hWas) state.showHelp = !state.showHelp;
     hWas = h;
 
     bool f = window.isKeyPressed(GLFW_KEY_F);
-    if (f && !fWas) { state.showStats = !state.showStats; }
+    if (f && !fWas) state.showStats = !state.showStats;
     fWas = f;
 }
 
 static void handleMousePicking(Window& window, Camera& camera, AppState& state) {
-    // mouse button first (so UI capture can early-return)
     static bool leftWasDown = false;
     bool leftDown = glfwGetMouseButton(window.getGLFWWindow(), GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS;
 
@@ -360,7 +388,6 @@ static void handleMousePicking(Window& window, Camera& camera, AppState& state) 
             for (size_t i = 0; i < pits.size(); ++i) {
                 if (pits[i].pitObject == state.hoveredObject) {
                     int pitIndex = static_cast<int>(i);
-
                     if (state.game->isValidMove(pitIndex)) {
                         state.game->executeMove(pitIndex);
                     }
@@ -411,6 +438,9 @@ static void drawImGuiHUD(AppState& state) {
     ImGui::Text("Store P1: %d", p1);
     ImGui::Text("Store P2: %d", p2);
 
+    ImGui::Separator();
+    ImGui::Text("Lighting: %s", state.lightsEnabled ? "ON" : "OFF");
+
     if (state.game->isGameOver()) {
         ImGui::Separator();
         auto gs = state.game->getGameState();
@@ -433,6 +463,7 @@ static void drawImGuiHUD(AppState& state) {
         ImGui::Text("R        : Reset");
         ImGui::Text("T        : Theme");
         ImGui::Text("M        : Render mode");
+        ImGui::Text("L        : Toggle lighting");
         ImGui::Text("H        : Toggle help");
         ImGui::Text("F        : Toggle stats");
         ImGui::End();
@@ -440,7 +471,7 @@ static void drawImGuiHUD(AppState& state) {
 
     // Stats window
     if (state.showStats) {
-        ImGui::SetNextWindowPos(ImVec2(10, 310), ImGuiCond_Always);
+        ImGui::SetNextWindowPos(ImVec2(10, 330), ImGuiCond_Always);
         ImGui::Begin("Stats", &state.showStats, ImGuiWindowFlags_AlwaysAutoResize);
         ImGui::Text("FPS: %.1f", ImGui::GetIO().Framerate);
         ImGui::End();

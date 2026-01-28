@@ -42,3 +42,6 @@
 67	14309	7902055884379975	CMakeFiles/imgui.dir/_deps/imgui-src/imgui.cpp.obj	26ada89a8b945d18
 14310	14664	7902056026798963	libimgui.a	7e2e0e3693ff1ae9
 14664	16143	7902056030349003	bin/Mancala3D.exe	212a1bd3ae69f24f
+25	150	7902066669856965	C:/Users/ayman/opengl_project/build/CMakeFiles/cmake.verify_globs	968b1b3b40ae73d0
+195	3484	7902066671557351	CMakeFiles/Mancala3D.dir/main.cpp.obj	3afd125a7e8dad28
+3485	4790	7902066704448568	bin/Mancala3D.exe	212a1bd3ae69f24f
