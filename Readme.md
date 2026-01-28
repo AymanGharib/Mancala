@@ -30,7 +30,6 @@ Before building the project, ensure you have the following installed:
 
 ```bash
 # Clone the repository (if not already done)
-git clone <repository-url>
 cd Mancala3D
 
 # Build and run (Windows)
