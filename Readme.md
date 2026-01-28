@@ -1,31 +1,34 @@
-📦 Mancala 3D – How to Run
-🛠️ Requirements
+# 📦 Mancala 3D – How to Run
 
-CMake (version 3.10 or higher)
+## 🛠️ Requirements
+- **CMake** (version 3.10 or higher)
+- **C++ compiler** (MinGW / MSVC / GCC / Clang)
+- **OpenGL-compatible GPU**
+- **Windows** (commands below are for Windows)
 
-C++ compiler (MinGW / MSVC / GCC / Clang)
+## 🚀 Build & Run Steps
 
-OpenGL-compatible GPU
-
-Windows (commands below are for Windows)
-
-🚀 Build & Run Steps
-
-Create a build directory
-
+### 1️⃣ Create a build directory
+```bash
 mkdir build
-
-
-Generate build files with CMake
-
+2️⃣ Generate build files with CMake
+bash
+Copier le code
 cmake -S . -B build
-
-
-Build the project
-
+3️⃣ Build the project
+bash
+Copier le code
 cmake --build build
-
-
-Run the application
-
+4️⃣ Run the application
+bash
+Copier le code
 .\build\bin\Mancala3D.exe
+markdown
+Copier le code
+
+If you want, I can also:
+- Add a **Quick Start** section (one command only)
+- Add **Linux/macOS** instructions
+- Make it **professor-submission friendly** or **GitHub polished**
+
+Just tell me 🔥
