@@ -1,0 +1,3 @@
+C:\mingw64\bin\cmake.exe -E rm -f CMakeFiles\Mancala3D.dir/objects.a
+C:\mingw64\bin\ar.exe qc CMakeFiles\Mancala3D.dir/objects.a @CMakeFiles\Mancala3D.dir\objects1.rsp
+C:\mingw64\bin\c++.exe -Wl,--whole-archive CMakeFiles\Mancala3D.dir/objects.a -Wl,--no-whole-archive -o bin\Mancala3D.exe -Wl,--out-implib,libMancala3D.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Mancala3D.dir\linkLibs.rsp
